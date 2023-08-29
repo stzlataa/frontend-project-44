@@ -22,3 +22,5 @@ rules:
   import/extensions:
     - error
     - never
+plugins:
+  - import

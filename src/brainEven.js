@@ -15,8 +15,7 @@ export const isEvenGame = (name) => {
     const answer = readlineSync.question(`${randomNumber} `);
 
     if (answer.toLowerCase() !== (correctAnswer ? 'yes' : 'no')) {
-      console.log(`'${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer ? 'yes' : 'no'}'. \nLet's try again, ${name}!
-      `);
+      console.log(`'${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer ? 'yes' : 'no'}'. \nLet's try again, ${name}!`);
       correct = false;
       break; 
     } else {

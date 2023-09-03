@@ -16,18 +16,17 @@ export const isEvenGame = (name) => {
 
     if (answer.toLowerCase() !== (correctAnswer ? 'yes' : 'no')) {
       console.log(`
-        '${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer ? 'yes' : 'no'}'.
-        Let's try again, ${name}
+        '${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer ? 'yes' : 'no'}.'.
+        Let's try again, ${name}!
       `);
-
       correct = false;
       break; 
     } else {
-      console.log('Correct!');
+      console.log('Correct!');	
     }
   }
 
   if (correct) {
-    console.log(`Congratulations, ${name}`);
+    console.log(`Congratulations, ${name}!`);
   }
 };

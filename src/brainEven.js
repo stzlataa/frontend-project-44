@@ -1,5 +1,5 @@
 import { playGame, findRandom } from './game.js';
-import { greetings } from './greetings.js';
+import { greetings } from './cli.js';
 
 const isEven = (number) => number % 2 === 0;
 

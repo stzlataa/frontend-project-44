@@ -1,5 +1,5 @@
-import { playGame, findRandom } from './game';
-import { greetings } from './greetings';
+import { playGame, findRandom } from './game.js';
+import { greetings } from './greetings.js';
 
 const isEven = (number) => number % 2 === 0;
 

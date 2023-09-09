@@ -1,10 +1,9 @@
-import { playGame, findRandom } from './game.js';
-import { greetings } from './cli.js';
+import { playGame, findRandom } from './index.js';
 
-const isEven = (number) => number % 2 === 0;
+const isEven = (number) => number % 2 === 0 ? 'yes' : 'no';
 
-export const isEvenGame = (name) => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+export const isEvenGame = () => {
+	const start = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-  playGame(name, findRandom, (question) => isEven(question()), greetings);
+	playGame(() => findRandom(), isEven, start);
 };

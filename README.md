@@ -4,4 +4,11 @@
 <a href="https://codeclimate.com/github/stzlataa/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/2ebd6838f39658087d99/maintainability" /></a>
 
 watch me here:
+
+brain-even
+
 https://asciinema.org/a/UP1YbPuLpSxtbku9ZwJuMkpMi
+
+brain-calc
+
+https://asciinema.org/a/JCuUW9MZzkJ8ldNYgADzSkHjE

@@ -25,5 +25,5 @@ const calculateExpression = (expression) => {
 
 export const calcMe = () => {
   const start = 'What is the result of the expression?';
-  playGame(() => findExpression(), calculateExpression, start); 
+  playGame(findExpression, calculateExpression, start); 
 };

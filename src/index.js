@@ -13,9 +13,9 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
 
   	for (let i = 0; i < 3; i++) {
     	const question = questionGenerator(); 
-    	let correctAnswer = `${answerChecker(question)}`;
-
+    	
     	let answer = readlineSync.question(`${question}\nYour answer: `);
+		let correctAnswer = `${answerChecker(question)}`;
 
     	if (answer !== correctAnswer) {
       		console.log(`'${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}!`);

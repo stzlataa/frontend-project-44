@@ -1,8 +1,6 @@
 import { playGame, findRandom } from './index.js';
 
-const findNumbers = () => {
-  const a = findRandom();
-  const b = findRandom();
+const findNumbers = (a = findRandom(), b = findRandom()) => {
   return `${a} ${b}`;
 };
 

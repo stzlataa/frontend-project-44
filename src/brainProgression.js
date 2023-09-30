@@ -34,7 +34,7 @@ export const gameProgression = () => {
   
   playGame(
     () => {
-      const progressionData = generateProgression();
+      const progressionData = generateProgression(); 
       return hideRandomElement(progressionData)[0];
     },
     () => findValue(),

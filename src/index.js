@@ -12,7 +12,7 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
   	let correct = true;
 
   	for (let i = 0; i < 3; i++) {
-    	const question = questionGenerator(); 
+    	const question = `Question: ${questionGenerator()}`; 
     	
     	let answer = readlineSync.question(`${question}\nYour answer: `);
 		let correctAnswer = `${answerChecker(question)}`;

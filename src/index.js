@@ -6,27 +6,27 @@ export const findRandom = () => Math.floor(Math.random() * 100);
 export const intro = (phrase) => console.log(phrase);
 
 export const playGame = (questionGenerator, answerChecker, phrase) => {
-	const name = greetings();
-  	intro(phrase);
-  
-  	let correct = true;
+  const name = greetings();
+  intro(phrase);
 
-  	for (let i = 0; i < 3; i++) {
-    	const question = `Question: ${questionGenerator()}`; 
-    	
-    	let answer = readlineSync.question(`${question}\nYour answer: `);
-		let correctAnswer = `${answerChecker(question)}`;
+  let correct = true;
 
-    	if (answer !== correctAnswer) {
-      		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}!`);
-      		correct = false;
-      		break;
-    	} else {
-      		console.log('Correct!');
-    	}
-  	}
+  for (let i = 0; i < 3; i++) {
+    const number = questionGenerator(); 
+    const question = `Question: ${number}`;
+    const answer = readlineSync.question(`${question}\nYour answer: `);
+    const correctAnswer = answerChecker(number); 
 
-  	if (correct) {
-    	console.log(`Congratulations, ${name}!`);
-  	}
+    if (answer.toLowerCase() !== correctAnswer.toLowerCase()) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}!`);
+      correct = false;
+      break;
+    } else {
+      console.log('Correct!');
+    }
+  }
+
+  if (correct) {
+    console.log(`Congratulations, ${name}!`);
+  }
 };

@@ -18,7 +18,7 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
 		let correctAnswer = `${answerChecker(question)}`;
 
     	if (answer !== correctAnswer) {
-      		console.log(`'${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}!`);
+      		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}!`);
       		correct = false;
       		break;
     	} else {

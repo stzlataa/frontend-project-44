@@ -19,12 +19,12 @@
 		const correctAnswer = answerChecker(number); 
 
 		if (answer.toLowerCase() !== correctAnswer.toLowerCase()) {
-		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-		console.log(`Let's try again, ${name}!`);
-		correct = false;
-		break;
+			console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+			console.log(`Let's try again, ${name}!`);
+			correct = false;
+			break;
 		} else {
-		console.log('Correct!');
+			console.log('Correct!');
 		}
 	}
 

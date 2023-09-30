@@ -18,7 +18,8 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
     const correctAnswer = answerChecker(number); 
 
     if (answer.toLowerCase() !== correctAnswer.toLowerCase()) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+	  console.log(`Let's try again, ${name}!`);
       correct = false;
       break;
     } else {

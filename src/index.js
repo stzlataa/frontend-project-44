@@ -1,34 +1,35 @@
-import readlineSync from 'readline-sync';
-import { greetings } from './cli.js';
+	import readlineSync from 'readline-sync';
+	import { greetings } from './cli.js';
 
-export const findRandom = () => Math.floor(Math.random() * 100);
+	export const findRandom = () => Math.floor(Math.random() * 100);
 
-export const intro = (phrase) => console.log(phrase);
+	export const intro = (phrase) => console.log(phrase);
 
-export const playGame = (questionGenerator, answerChecker, phrase) => {
-  const name = greetings();
-  intro(phrase);
+	export const playGame = (questionGenerator, answerChecker, phrase) => {
+	const name = greetings();
+	intro(phrase);
 
-  let correct = true;
+	let correct = true;
 
-  for (let i = 0; i < 3; i++) {
-    const number = questionGenerator(); 
-    const question = `Question: ${number}`;
-    const answer = readlineSync.question(`${question}\nYour answer: `);
-    const correctAnswer = answerChecker(number); 
+	for (let i = 0; i < 3; i++) {
+		const number = questionGenerator(); 
+		const question = `${number}`;
+		console.log('Question:', question);
+		const answer = readlineSync.question('Your answer: ');
+		const correctAnswer = answerChecker(number); 
 
-    if (answer.toLowerCase() !== correctAnswer.toLowerCase()) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-	  console.log(`Let's try again, ${name}!`);
-      correct = false;
-      break;
-    } else {
-      console.log('Correct!');
-    }
-  }
+		if (answer.toLowerCase() !== correctAnswer.toLowerCase()) {
+		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+		console.log(`Let's try again, ${name}!`);
+		correct = false;
+		break;
+		} else {
+		console.log('Correct!');
+		}
+	}
 
-  if (correct) {
-    console.log(`Congratulations, ${name}!`);
-	return;
-  }
-};
+	if (correct) {
+		console.log(`Congratulations, ${name}!`);
+		return;
+	}
+	};

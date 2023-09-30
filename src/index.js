@@ -29,5 +29,6 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
 
   if (correct) {
     console.log(`Congratulations, ${name}!`);
+	return;
   }
 };

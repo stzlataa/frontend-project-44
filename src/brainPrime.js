@@ -2,7 +2,7 @@ import { playGame, findRandom } from './index.js';
 
 const isPrime = (number) => {
 	let isPrimeNum = true;
-	if (number === 1) {
+	if (number <= 1) {
 		isPrimeNum = false;
 	}    
 	

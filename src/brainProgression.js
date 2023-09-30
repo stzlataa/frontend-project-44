@@ -26,7 +26,7 @@ const hideRandomElement = (arr = generateProgression()) => {
 };
 
 const findValue = () => {
-  return hiddenValue; 
+  return hiddenValue.toString(); 
 };
 
 export const gameProgression = () => {

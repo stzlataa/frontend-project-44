@@ -30,6 +30,5 @@
 
 	if (correct) {
 		console.log(`Congratulations, ${name}!`);
-		return;
 	}
 	};

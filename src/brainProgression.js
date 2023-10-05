@@ -1,4 +1,7 @@
+#!/usr/bin/env node
 import { playGame, findRandom } from './index.js';
+
+let hiddenValue;
 
 const generateProgression = () => {
   const progression = [];
@@ -11,31 +14,21 @@ const generateProgression = () => {
   }
 
   const randomIndex = Math.floor(Math.random() * 10);
-  const valueOfX = progression[randomIndex];
+  hiddenValue = progression[randomIndex];
 
-  return [progression, randomIndex, valueOfX];
+  progression[randomIndex] = '..';
+
+  return progression.join(' ');
 };
 
-let hiddenValue;
-
-const hideRandomElement = (arr = generateProgression()) => {
-  const modifiedArr = [...arr[0]];
-  hiddenValue = arr[2];
-  modifiedArr[arr[1]] = '..';
-  return [modifiedArr.join(' '), arr[2]];
-};
-
-const findValue = () => hiddenValue.toString();
+const findValue = (hiddenValue) => hiddenValue.toString();
 
 export const gameProgression = () => {
   const start = 'What number is missing in the progression?';
 
   playGame(
-    () => {
-      const progressionData = generateProgression();
-      return hideRandomElement(progressionData)[0];
-    },
-    findValue,
+    () => generateProgression(),
+    () => findValue(hiddenValue),
     start,
   );
 };

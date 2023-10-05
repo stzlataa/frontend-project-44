@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import { greetings } from './cli.js';
 
 export const findRandom = () => Math.floor(Math.random() * 100);
 
@@ -9,9 +8,10 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
   const name = greetings();
   intro(phrase);
 
-  let correct = true;
+  let correctAnswersCount = 0;
+  const maxAttempts = 3;
 
-  for (let i = 0; i < 3; i += 1) {
+  while (correctAnswersCount < maxAttempts) {
     const number = questionGenerator();
     const question = `${number}`;
     console.log('Question:', question);
@@ -21,14 +21,14 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
     if (answer.toLowerCase() !== correctAnswer.toLowerCase()) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      correct = false;
       break;
     } else {
       console.log('Correct!');
+      correctAnswersCount += 1;
     }
   }
 
-  if (correct) {
+  if (correctAnswersCount === maxAttempts) {
     console.log(`Congratulations, ${name}!`);
   }
 };

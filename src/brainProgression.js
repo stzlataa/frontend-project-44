@@ -21,7 +21,7 @@ const generateProgression = () => {
   return progression.join(' ');
 };
 
-const findValue = (hiddenValue) => hiddenValue.toString();
+const findValue = (hiddenValue) => hiddenValue;
 
 export const gameProgression = () => {
   const start = 'What number is missing in the progression?';

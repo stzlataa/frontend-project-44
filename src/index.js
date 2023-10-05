@@ -18,7 +18,7 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = answerChecker(number);
 
-    if (answer.toLowerCase() !== correctAnswer.toLowerCase()) {
+    if (answer.toString().toLowerCase() !== correctAnswer.toString().toLowerCase()) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       correct = false;

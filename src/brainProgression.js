@@ -27,7 +27,7 @@ export const gameProgression = () => {
   const start = 'What number is missing in the progression?';
 
   playGame(
-    () => generateProgression,
+    () => generateProgression(),
     () => findValue(hiddenValue),
     start,
   );

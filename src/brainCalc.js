@@ -6,25 +6,22 @@ const getRandomOperator = () => {
   return operators[randomIndex];
 };
 
-const findExpression = (a = findRandom(), b = findRandom(), operator = getRandomOperator()) => {
-  return `${a} ${operator} ${b}`;
-};
+const findExpression = (a = findRandom(), b = findRandom(), operator = getRandomOperator()) => `${a} ${operator} ${b}`;
 
 const calculateExpression = (expression) => {
   const [a, operator, b] = expression.split(' ');
-  
+
   switch (operator) {
     case '+':
-      return (parseInt(a, 10) + parseInt(b, 10)).toString(); 
+      return (parseInt(a, 10) + parseInt(b, 10)).toString();
     case '-':
-      return (parseInt(a, 10) - parseInt(b, 10)).toString(); 
+      return (parseInt(a, 10) - parseInt(b, 10)).toString();
     case '*':
-      return (parseInt(a, 10) * parseInt(b, 10)).toString(); 
+      return (parseInt(a, 10) * parseInt(b, 10)).toString();
   }
 };
 
-
 export const calcMe = () => {
   const start = 'What is the result of the expression?';
-  playGame(findExpression, calculateExpression, start); 
+  playGame(findExpression, calculateExpression, start);
 };

@@ -9,13 +9,10 @@ function findGCD(numbers) {
   return findGCD(`${b} ${a % b}`);
 }
 
-
-const findNumbers = (a = findRandom(), b = findRandom()) => {
-  return `${a} ${b}`;
-};
+const findNumbers = (a = findRandom(), b = findRandom()) => `${a} ${b}`;
 
 export const gameGCD = () => {
   const start = 'Find the greatest common divisor of given numbers.';
-  
+
   playGame(findNumbers, findGCD, start);
 };

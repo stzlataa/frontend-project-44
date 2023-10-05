@@ -1,26 +1,15 @@
 env:
-  browser: true
+  node: true
   es2021: true
-extends: eslint:recommended
+extends: airbnb-base
 parserOptions:
   ecmaVersion: latest
   sourceType: module
 rules:
-  indent:
+  no-console: 0
+  consistent-return: off
+  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
-    - tab
-  linebreak-style:
-    - error
-    - windows
-  quotes:
-    - error
-    - single
-  semi:
-    - error
-    - always
-  no-console: off
-  import/extensions:
-    - error
-    - never
-plugins:
-  - import
+    - ignorePackages
+    - js: always
+  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]

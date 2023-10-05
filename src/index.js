@@ -30,6 +30,6 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
   }
 
   if (correctAnswers === maxAttempts) {
-    console.log(`Congratulations, ${name}! You've answered all questions correctly.`);
+    console.log(`Congratulations, ${name}!`);
   }
 };

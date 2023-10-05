@@ -1,12 +1,17 @@
 import readlineSync from 'readline-sync';
-import { greetings } from './cli.js';
 
 export const findRandom = () => Math.floor(Math.random() * 100);
 
 export const intro = (phrase) => console.log(phrase);
 
 export const playGame = (questionGenerator, answerChecker, phrase) => {
-  const name = greetings();
+  const greet = () => {
+    console.log('Welcome to the Brain Games!');
+    const userName = readlineSync.question('May I have your name? ');
+    console.log(`Hello, ${userName}!`);
+  };
+
+  const name = greet();
   intro(phrase);
 
   let correct = true;
@@ -22,7 +27,7 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       correct = false;
-	  break;
+      break;
     } else {
       console.log('Correct!');
     }
@@ -32,3 +37,5 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
     console.log(`Congratulations, ${name}!`);
   }
 };
+
+export default playGame;

@@ -18,10 +18,14 @@ const calculateExpression = (expression) => {
       return (parseInt(a, 10) - parseInt(b, 10)).toString();
     case '*':
       return (parseInt(a, 10) * parseInt(b, 10)).toString();
+    default:
+      return false;
   }
 };
 
-export const calcMe = () => {
+const brainCalc = () => {
   const start = 'What is the result of the expression?';
   playGame(findExpression, calculateExpression, start);
 };
+
+export default brainCalc;

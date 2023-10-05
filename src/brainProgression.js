@@ -21,9 +21,9 @@ const generateProgression = () => {
   return progression.join(' ');
 };
 
-const findValue = (hiddenValue) => hiddenValue;
+const findValue = (value) => value;
 
-export const gameProgression = () => {
+const brainProgression = () => {
   const start = 'What number is missing in the progression?';
 
   playGame(
@@ -32,3 +32,5 @@ export const gameProgression = () => {
     start,
   );
 };
+
+export default brainProgression;

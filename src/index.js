@@ -9,10 +9,10 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
   const name = greetings();
   intro(phrase);
 
-  let correctAnswers = 0; // Используем счетчик правильных ответов
-  const maxAttempts = 3; // Максимальное количество попыток
+  let correctAnswers = 0; // Счетчик правильных ответов
+  let incorrectAnswers = 0; // Счетчик неправильных ответов
 
-  for (let i = 0; i < maxAttempts; i += 1) {
+  while (correctAnswers < 3 && incorrectAnswers < 1) {
     const number = questionGenerator();
     const question = `${number}`;
     console.log('Question:', question);
@@ -22,14 +22,12 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
     if (answer.toLowerCase() !== correctAnswer.toLowerCase()) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      break; // Завершаем игру после первого неправильного ответа
+      incorrectAnswers += 1;
     } else {
       console.log('Correct!');
-      correctAnswers += 1; // Увеличиваем счетчик правильных ответов
+      correctAnswers += 1;
     }
   }
 
-  if (correctAnswers === maxAttempts) {
     console.log(`Congratulations, ${name}!`);
-  }
 };

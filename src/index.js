@@ -7,13 +7,11 @@ export const intro = (phrase) => console.log(phrase);
 
 export const playGame = (questionGenerator, answerChecker, phrase) => {
   const name = greetings();
+  intro(phrase);
 
   let correct = true;
 
   for (let i = 0; i < 3; i += 1) {
-	if (i === 0) {
-		intro(phrase);
-	}
     const number = questionGenerator();
     const question = `${number}`;
     console.log('Question:', question);

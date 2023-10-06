@@ -13,11 +13,11 @@ const calculateExpression = (expression) => {
 
   switch (operator) {
     case '+':
-      return (parseInt(a, 10) + parseInt(b, 10));
+      return (parseInt(a, 10) + parseInt(b, 10)).toString();
     case '-':
-      return (parseInt(a, 10) - parseInt(b, 10));
+      return (parseInt(a, 10) - parseInt(b, 10)).toString();
     case '*':
-      return (parseInt(a, 10) * parseInt(b, 10));
+      return (parseInt(a, 10) * parseInt(b, 10)).toString();
     default:
       return false;
   }

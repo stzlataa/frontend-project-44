@@ -13,19 +13,19 @@ const calculateExpression = (expression) => {
 
   switch (operator) {
     case '+':
-      return (parseInt(a, 10) + parseInt(b, 10)).toString();
+      return (parseInt(a, 10) + parseInt(b, 10));
     case '-':
-      return (parseInt(a, 10) - parseInt(b, 10)).toString();
+      return (parseInt(a, 10) - parseInt(b, 10));
     case '*':
-      return (parseInt(a, 10) * parseInt(b, 10)).toString();
+      return (parseInt(a, 10) * parseInt(b, 10));
     default:
       return false;
   }
 };
 
-const brainCalc = () => {
+const playCalc = () => {
   const start = 'What is the result of the expression?';
   playGame(findExpression, calculateExpression, start);
 };
 
-export default brainCalc;
+export default playCalc;

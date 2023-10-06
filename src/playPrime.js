@@ -16,10 +16,10 @@ const isPrime = (number) => {
   return isPrimeNum ? 'yes' : 'no';
 };
 
-export const brainPrime = () => {
+const playPrime = () => {
   const start = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   playGame(() => Math.floor(findRandom() / 10), isPrime, start);
 };
 
-export default brainPrime;
+export default playPrime;

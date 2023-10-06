@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/stzlataa/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/stzlataa/frontend-project-44/actions)",
+  "description": "A pack of games that can help you improve your math skills and are also fun to play during your free time.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

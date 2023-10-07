@@ -1,19 +1,19 @@
 #!/usr/bin/env node
-import { playGame, findRandom } from './index.js';
+import { playGame, getRandomNumber } from './index.js';
 
 let hiddenValue;
 
 const generateProgression = () => {
   const progression = [];
-  const step = Math.floor(findRandom() / 10);
-  const first = findRandom();
-  const last = first + step * (10 - 1);
+  const step = getRandomNumber(2, 10);
+  const first = getRandomNumber(0, 101);
+  const length = getRandomNumber(5, 11);
 
-  for (let i = first; i <= last; i += step) {
+  for (let i = first; progression.length < length; i += step) {
     progression.push(i);
   }
 
-  const randomIndex = Math.floor(Math.random() * 10);
+  const randomIndex = getRandomNumber(0, length);
   hiddenValue = progression[randomIndex];
 
   progression[randomIndex] = '..';

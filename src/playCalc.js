@@ -1,4 +1,4 @@
-import { playGame, findRandom } from './index.js';
+import { playGame, getRandomNumber } from './index.js';
 
 const getRandomOperator = () => {
   const operators = ['+', '-', '*'];
@@ -6,7 +6,7 @@ const getRandomOperator = () => {
   return operators[randomIndex];
 };
 
-const findExpression = (a = findRandom(), b = findRandom(), operator = getRandomOperator()) => `${a} ${operator} ${b}`;
+const findExpression = (a = getRandomNumber(1, 10), b = getRandomNumber(1, 10), operator = getRandomOperator()) => `${a} ${operator} ${b}`;
 
 const calculateExpression = (expression) => {
   const [a, operator, b] = expression.split(' ');

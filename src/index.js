@@ -1,6 +1,10 @@
 import readlineSync from 'readline-sync';
 
-export const findRandom = () => Math.floor(Math.random() * 100);
+export const getRandomNumber = (floor, ceil) => {
+  const min = Math.ceil(floor);
+  const max = Math.floor(ceil);
+  return Math.floor(Math.random() * (max - min)) + min;
+};
 
 export const intro = (phrase) => console.log(phrase);
 
@@ -29,10 +33,9 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       correct = false;
-      break;
-    } else {
-      console.log('Correct!');
+      return;
     }
+    console.log('Correct!');
   }
 
   if (correct) {

@@ -1,4 +1,4 @@
-import { playGame, findRandom } from './index.js';
+import { playGame, getRandomNumber } from './index.js';
 
 function findGCD(numbers) {
   const [a, b] = numbers.split(' ').map(Number);
@@ -9,7 +9,7 @@ function findGCD(numbers) {
   return findGCD(`${b} ${a % b}`);
 }
 
-const findNumbers = (a = findRandom(), b = findRandom()) => `${a} ${b}`;
+const findNumbers = (a = getRandomNumber(1, 10), b = getRandomNumber(1, 10)) => `${a} ${b}`;
 
 const playGcd = () => {
   const start = 'Find the greatest common divisor of given numbers.';

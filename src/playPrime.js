@@ -1,4 +1,4 @@
-import { playGame, findRandom } from './index.js';
+import { playGame, getRandomNumber } from './index.js';
 
 const isPrime = (number) => {
   let isPrimeNum = true;
@@ -19,7 +19,7 @@ const isPrime = (number) => {
 const playPrime = () => {
   const start = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  playGame(() => Math.floor(findRandom() / 10), isPrime, start);
+  playGame(() => getRandomNumber(1, 10), isPrime, start);
 };
 
 export default playPrime;

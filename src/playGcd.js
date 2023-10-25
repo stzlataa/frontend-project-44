@@ -1,5 +1,5 @@
 import { playGame } from './index.js';
-import { getRandomNumber } from './utils.js';
+import getRandomNumber from './utils.js';
 
 function findGCD(numbers) {
   const [a, b] = numbers.split(' ').map(Number);

@@ -1,13 +1,5 @@
 import readlineSync from 'readline-sync';
 
-export const getRandomNumber = (floor, ceil) => {
-  const min = Math.ceil(floor);
-  const max = Math.floor(ceil);
-  return Math.floor(Math.random() * (max - min)) + min;
-};
-
-export const intro = (phrase) => console.log(phrase);
-
 export const playGame = (questionGenerator, answerChecker, phrase) => {
   const greet = () => {
     console.log('Welcome to the Brain Games!');
@@ -18,7 +10,7 @@ export const playGame = (questionGenerator, answerChecker, phrase) => {
   };
 
   const name = greet();
-  intro(phrase);
+  console.log(phrase);
 
   let correct = true;
 

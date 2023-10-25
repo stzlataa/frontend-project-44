@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { playGame, getRandomNumber } from './index.js';
+import { playGame } from './index.js';
+import { getRandomNumber } from './utils.js';
 
 let hiddenValue;
 

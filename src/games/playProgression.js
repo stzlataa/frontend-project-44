@@ -3,7 +3,7 @@ import { playGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 function generateProgression() {
-  let hiddenValue;
+  let hiddenValue = 0;
 
   const progression = [];
   const step = getRandomNumber(2, 10);

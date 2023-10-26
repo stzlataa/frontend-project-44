@@ -3,7 +3,7 @@ import { playGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 function generateProgression() {
-  let hiddenValue;
+  let hiddenValue = 0;
 
   const progression = [];
   const step = getRandomNumber(2, 10);
@@ -15,13 +15,16 @@ function generateProgression() {
   }
 
   const randomIndex = getRandomNumber(0, length);
+
   hiddenValue = progression[randomIndex];
+
+  const correctAnswer = hiddenValue.toString();
 
   progression[randomIndex] = '..';
 
   const question = progression.join(' ');
 
-  return [hiddenValue, question];
+  return [question, correctAnswer];
 }
 
 const playProgression = () => {

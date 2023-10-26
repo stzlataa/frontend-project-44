@@ -15,13 +15,15 @@ function generateProgression() {
   }
 
   const randomIndex = getRandomNumber(0, length);
-  hiddenValue = progression[randomIndex].toString();
+  hiddenValue = progression[randomIndex];
 
   progression[randomIndex] = '..';
 
+  const correctAnswer = hiddenValue.toString();
+
   const question = progression.join(' ');
 
-  return [question, hiddenValue];
+  return [question, correctAnswer];
 }
 
 const playProgression = () => {

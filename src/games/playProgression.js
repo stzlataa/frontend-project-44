@@ -14,18 +14,16 @@ function generateProgression() {
     progression.push(i);
   }
 
-  const randomIndex = getRandomNumber(0, length);
-
-  hiddenValue = progression[randomIndex];
-
-  const correctAnswer = hiddenValue.toString();
+  const randomIndex = getRandomNumber(0, length - 1);
+  hiddenValue = progression[randomIndex].toString();
 
   progression[randomIndex] = '..';
 
   const question = progression.join(' ');
 
-  return [question, correctAnswer];
+  return [question, hiddenValue];
 }
+
 
 const playProgression = () => {
   const description = 'What number is missing in the progression?';

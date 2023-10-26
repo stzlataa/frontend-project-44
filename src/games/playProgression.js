@@ -19,11 +19,9 @@ function generateProgression() {
 
   progression[randomIndex] = '..';
 
-  const correctAnswer = hiddenValue.toString();
-
   const question = progression.join(' ');
 
-  return [question, correctAnswer];
+  return [hiddenValue, question];
 }
 
 const playProgression = () => {

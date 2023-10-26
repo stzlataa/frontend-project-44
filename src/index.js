@@ -1,38 +1,33 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-export const playGame = (questionGenerator, answerChecker, phrase) => {
-  const greet = () => {
-    console.log('Welcome to the Brain Games!');
-    const userName = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${userName}!`);
+const greet = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
 
-    return userName;
-  };
+  return userName;
+};
 
+export const playGame = (generateRound, description) => {
   const name = greet();
-  console.log(phrase);
+  console.log(description);
 
-  let correct = true;
+  const numberOfRounds = 3;
 
-  for (let i = 0; i < 3; i += 1) {
-    const number = questionGenerator();
-    const question = `${number}`;
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    const [question, correctAnswer] = generateRound();
     console.log('Question:', question);
-    const answer = readlineSync.question('Your answer: ');
-    const correctAnswer = answerChecker(number);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (answer.toString().toLowerCase() !== correctAnswer.toString().toLowerCase()) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      correct = false;
       return;
     }
     console.log('Correct!');
   }
-
-  if (correct) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default playGame;

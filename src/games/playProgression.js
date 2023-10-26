@@ -13,12 +13,12 @@ function generateProgression() {
   }
 
   const randomIndex = getRandomNumber(0, length);
-  const hiddenValue = progression[randomIndex].toString();
+  const hiddenValue = progression[randomIndex];
   progression[randomIndex] = '..';
 
   const question = progression.join(' ');
 
-  return [question, hiddenValue];
+  return [question, hiddenValue.toString()];
 }
 
 const playProgression = () => {

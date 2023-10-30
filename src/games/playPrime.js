@@ -1,15 +1,20 @@
-#!/usr/bin/env node
 import { playGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-function generatePrime() {
-  const question = getRandomNumber(1, 10);
+const limit = 10;
+
+function generateRound() {
+  const question = getRandomNumber(1, limit);
 
   const isPrime = (number) => {
     if (number <= 1) return false;
-    for (let i = 2; i < number; i += 1) {
-      if (number % i === 0) return false;
+    if (number <= 3) return true;
+    if (number % 2 === 0 || number % 3 === 0) return false;
+
+    for (let i = 5; i * i <= number; i += 6) {
+      if (number % i === 0 || number % (i + 2) === 0) return false;
     }
+
     return true;
   };
 
@@ -19,9 +24,9 @@ function generatePrime() {
 }
 
 const playPrime = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const description = 'Answer "yes" if the given number is prime. Otherwise answer "no".';
 
-  playGame(generatePrime, description);
+  playGame(generateRound, description);
 };
 
 export default playPrime;

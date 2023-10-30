@@ -1,5 +1,6 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
+
+const numberOfRounds = 3;
 
 const greet = () => {
   console.log('Welcome to the Brain Games!');
@@ -9,11 +10,10 @@ const greet = () => {
   return userName;
 };
 
-export const playGame = (generateRound, description) => {
-  const name = greet();
-  console.log(description);
+const name = greet();
 
-  const numberOfRounds = 3;
+export const playGame = (generateRound, description) => {
+  console.log(description);
 
   for (let i = 0; i < numberOfRounds; i += 1) {
     const [question, correctAnswer] = generateRound();

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { playGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
@@ -19,11 +18,11 @@ const calculateCalc = (expression) => {
     case '*':
       return numA * numB;
     default:
-      return false;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
-const generateCalc = () => {
+const generateRound = () => {
   const a = getRandomNumber(1, 10);
   const b = getRandomNumber(1, 10);
   const operator = getRandomOperator();
@@ -35,7 +34,7 @@ const generateCalc = () => {
 const playCalc = () => {
   const description = 'What is the result of the expression?';
 
-  playGame(generateCalc, description);
+  playGame(generateRound, description);
 };
 
 export default playCalc;

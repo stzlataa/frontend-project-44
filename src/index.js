@@ -10,9 +10,8 @@ const greet = () => {
   return userName;
 };
 
-const name = greet();
-
 export const playGame = (generateRound, description) => {
+  const name = greet();
   console.log(description);
 
   for (let i = 0; i < numberOfRounds; i += 1) {

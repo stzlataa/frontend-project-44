@@ -1,10 +1,8 @@
 import { playGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const limit = 10;
-
 function generateRound() {
-  const question = getRandomNumber(1, limit);
+  const question = getRandomNumber(1, 10);
 
   const isPrime = (number) => {
     if (number <= 1) return false;

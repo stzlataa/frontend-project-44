@@ -26,7 +26,7 @@ function generateRound() {
 }
 
 const playPrime = () => {
-  const description = 'Answer "yes" if the given number is prime. Otherwise answer "no".';
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   playGame(generateRound, description);
 };

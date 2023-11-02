@@ -1,11 +1,17 @@
 import { playGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-function generateProgression() {
-  const progression = [];
+function generateNumbers() {
   const step = getRandomNumber(2, 10);
   const first = getRandomNumber(0, 100);
   const length = getRandomNumber(5, 10);
+
+  return [step, first, length];
+}
+
+function generateProgression() {
+  const [step, first, length] = generateNumbers();
+  const progression = [];
 
   for (let i = first; progression.length < length; i += step) {
     progression.push(i);
